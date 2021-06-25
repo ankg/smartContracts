@@ -5,7 +5,6 @@ App = {
   hasVoted: false,
 
    initMetaMask: function() {
-
       async function enableUser() {
           const accounts = await ethereum.enable();
           const account = accounts[0];
@@ -55,7 +54,7 @@ App = {
         toBlock: 'latest'
       }).watch(function(error, event) {
         // Reload when a new vote is recorded
-        App.render();
+        //App.render();
       });
     });
   },
@@ -67,7 +66,6 @@ App = {
 
     loader.show();
     content.hide();
-
     // Load account data
     web3.eth.getCoinbase(function(err, account) {
       if (err === null) {
@@ -86,8 +84,7 @@ App = {
 
       var candidatesSelect = $('#candidatesSelect');
       candidatesSelect.empty();
-
-      for (var i = 1; i <= candidatesCount; i++) {
+      for (var i = 1; i <= candidatesCount.toNumber(); i++) {
         electionInstance.candidates(i).then(function(candidate) {
           var id = candidate[0];
           var name = candidate[1];
