@@ -54,7 +54,7 @@ App = {
         toBlock: 'latest'
       }).watch(function(error, event) {
         // Reload when a new vote is recorded
-        //App.render();
+        App.render();
       });
     });
   },
